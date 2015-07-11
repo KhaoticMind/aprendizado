@@ -1,0 +1,16 @@
+digraph finite_state_machine {
+	rankdir=TB;
+	size="8,5"
+	node [shape = square ] C2 C1
+	node [shape = circle];
+	"y < 0" -> "C2" [ label = "SIM" ];
+	"y < 0" -> "y <= 3" [ label = "NAO" ];
+	"y <= 3" -> "x >= 2" [ label = "SIM" ];
+	"y <= 3" -> "C1" [ label = "NAO" ];
+	"x >= 2" -> "C1" [ label = "SIM" ];
+	"x >= 2" -> "y <= 2" [ label = "NAO" ];
+	"y <= 2" -> "C2" [ label = "SIM" ];
+	"y <= 2" -> "x >= 1" [ label = "NAO" ];
+	"x >= 1" -> "C1" [ label = "SIM" ];
+	"x >= 1" -> "C2" [ label = "NAO" ];
+}
